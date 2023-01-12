@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../../base
+
+patchesStrategicMerge:
+  - oauth/oauth.yaml
+
+resources:
+  - htpasswd/htpasswd-secret.yaml
+  - htpasswd/ocpadmin-clusterrolebinding.yaml
+  - htpasswd/ocpreader-clusterrolebinding.yaml
